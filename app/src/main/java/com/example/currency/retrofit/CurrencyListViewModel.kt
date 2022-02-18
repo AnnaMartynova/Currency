@@ -2,7 +2,7 @@ package com.example.currency.retrofit
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.currency.model_data.CurrencyListResponse
+import com.example.currency.data.CurrencyListResponse
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 

@@ -2,6 +2,7 @@ package com.example.currency
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.ArrayMap
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -32,7 +33,7 @@ class HomeFragment : Fragment(R.layout.home_fragment) {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                recyclerView?.adapter = CurrencyAdapter(ArrayList(it.quotes))
+                recyclerView?.adapter = CurrencyAdapter(it.data.values.toList())
             }, { error ->
                 Log.e(HomeFragment::class.simpleName, "Error", error)
             })

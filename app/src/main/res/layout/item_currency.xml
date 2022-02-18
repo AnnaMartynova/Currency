@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="90dp">
@@ -10,56 +11,57 @@
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:layout_marginStart="16dp"
+        android:background="@drawable/corners"
+        android:elevation="15dp"
         android:layout_marginEnd="16dp">
 
+
         <TextView
-            android:id="@+id/char_code"
+            android:id="@+id/charCode"
             android:layout_width="54dp"
             android:layout_height="24dp"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="14dp"
-            android:layout_toEndOf="@+id/imageView"
             android:lineHeight="24dp"
-            android:text="USD"
             android:textColor="@color/design_default_color_on_secondary"
-            android:textSize="18dp"
-            android:textStyle="normal">
+            android:textSize="18sp"
+            android:textStyle="normal"
+            tools:text="USD">
 
         </TextView>
 
-
         <TextView
             android:id="@+id/nominal"
-            android:layout_width="11dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="44dp"
-            android:layout_toEndOf="@+id/imageView"
-            android:width="75dp"
+            android:layout_below="@+id/char_code"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
             android:lineHeight="16dp"
-            android:text="1"
             android:textColor="@color/design_default_color_on_secondary"
-            android:textSize="12dp"
-            android:textStyle="normal">
+            android:textSize="12sp"
+            android:textStyle="normal"
+            tools:text="1">
 
         </TextView>
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="29dp"
-            android:layout_marginTop="44dp"
-            android:layout_toEndOf="@+id/imageView"
+            android:layout_height="16dp"
+            android:layout_below="@+id/char_code"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/nominal"
             android:width="75dp"
             android:lineHeight="16dp"
-            android:text="Доллар США"
             android:textColor="@color/design_default_color_on_secondary"
-            android:textSize="12dp"
-            android:textStyle="normal">
+            android:textSize="12sp"
+            android:textStyle="normal"
+            tools:text="Доллар США">
 
         </TextView>
 
@@ -73,23 +75,12 @@
             android:layout_marginEnd="17dp"
             android:width="88dp"
             android:lineHeight="24dp"
-            android:text="$ 135,37"
             android:textColor="#1A1A1A"
-            android:textSize="18dp"
-            android:textStyle="normal">
+            android:textSize="18sp"
+            android:textStyle="normal"
+            tools:text="$ 135,37">
 
         </TextView>
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/cardview_dark_background" />
 
 
     </RelativeLayout>

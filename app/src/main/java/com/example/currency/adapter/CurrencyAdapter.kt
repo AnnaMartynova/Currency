@@ -7,9 +7,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currency.R
-import com.example.currency.model_data.CurrencyListResponse
+import com.example.currency.data.CurrencyListResponse
+import com.example.currency.databinding.ItemCurrencyBinding
 
-class CurrencyAdapter( var arrayList: ArrayList<CurrencyListResponse.CurrencyListItem>) :
+class CurrencyAdapter(val list: List<CurrencyListResponse.Valute>) :
     RecyclerView.Adapter<CurrencyAdapter.ItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
@@ -19,26 +20,30 @@ class CurrencyAdapter( var arrayList: ArrayList<CurrencyListResponse.CurrencyLis
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        val currencyListItem = arrayList[position]
-        holder.bind(currencyListItem)
+        val list = list[position]
+        holder.bind(list)
     }
 
     override fun getItemCount(): Int {
-        return arrayList.size
+        return list.size
     }
 
     class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(item: CurrencyListResponse.CurrencyListItem) {
-            with(itemView) {
+        val binding = ItemCurrencyBinding.bind(itemView)
 
-                findViewById<TextView>(R.id.char_code).text = item.char_code
-                findViewById<TextView>(R.id.nominal).text = item.nominal
-                findViewById<TextView>(R.id.name).text = item.name
-                findViewById<TextView>(R.id.value).text = item.value
+        fun bind(item: CurrencyListResponse.Valute) {
+            with(binding) {
 
+                charCode.text = item.char_code
+                nominal.text = item.nominal
+                name.text = item.name
+                value.text = item.value
+                val values = item.value
 
-                findViewById<CardView>(R.id.cardview).elevation = 0f
+                val value = item.value.toString().toFloat()
+                val des = (Math.round(value * 100.0) / 100.0).toString()
+                values.setText("₽"+" "+des)
             }
         }
     }
