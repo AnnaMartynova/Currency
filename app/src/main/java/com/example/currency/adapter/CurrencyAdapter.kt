@@ -39,11 +39,10 @@ class CurrencyAdapter(val list: List<CurrencyListResponse.Valute>) :
                 nominal.text = item.nominal
                 name.text = item.name
                 value.text = item.value
-                val values = item.value
 
                 val value = item.value.toString().toFloat()
                 val des = (Math.round(value * 100.0) / 100.0).toString()
-                values.setText("₽"+" "+des)
+                binding.value.setText("₽"+" "+des)
             }
         }
     }
