@@ -14,8 +14,7 @@ class CurrencyAdapter(val list: List<CurrencyListResponse.Valute>) :
     RecyclerView.Adapter<CurrencyAdapter.ItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_currency, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_currency, parent, false)
         return ItemHolder(itemView)
     }
 

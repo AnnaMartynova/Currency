@@ -59,8 +59,7 @@ dependencies {
 
 
     implementation "android.arch.lifecycle:viewmodel:1.1.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0-alpha02"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0-alpha03"
 
-    implementation 'com.squareup.picasso:picasso:2.71828'
-
+    implementation "androidx.preference:preference-ktx:1.2.0"
 }
